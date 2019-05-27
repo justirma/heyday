@@ -1,6 +1,6 @@
-import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
+import Button from "./Button/Button"
 
 const Banner = styled.div`
   min-height: 90vh;
@@ -35,7 +35,7 @@ const Desc = styled.p`
   padding: 10%;
 `
 
-const Hero = ({ siteHero }) => (
+const Hero = () => (
   <Banner>
     <SiteInfo>
       <Heading>Women Who Co-work</Heading>
@@ -45,15 +45,9 @@ const Hero = ({ siteHero }) => (
         projects, studying in a distration-free space.
       </Desc>
     </SiteInfo>
+    <Button text={"Hello"} />
+    <Button dark text={"Goodbye"} />
   </Banner>
 )
-
-Hero.propTypes = {
-  siteHero: PropTypes.string,
-}
-
-Hero.defaultProps = {
-  siteHero: ``,
-}
 
 export default Hero
