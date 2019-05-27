@@ -1,53 +1,51 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import styled from "styled-components"
 
-const navStyles = {
-  display: `inline-block`,
-  textAlign: `left`,
-  position: `absolute`,
-  width: `300px`,
-  marginTop: `10px`,
-  right: 0
-};
+const SiteHeader = styled.header`
+  background: #fff;
+  margin: 0 4% 0 4%;
+`
 
-const ulStyles = {
-  listStyleType: `none`,
-  position: `absolute`,
-  width: `auto`
-};
+const Inner = styled.div`
+  margin: 0 auto;
+  padding: 1.45rem 1.0875rem;
+`
+
+const Heading = styled.h1`
+  margin: 0;
+`
+
+//Custom component
+const HomeLink = styled(Link)`
+  color: #000;
+  text-decoration: none;
+`
+
+const List = styled.ul`
+  margin: 0;
+  padding: 0;
+  text-align: center;
+`
+
+const ListItem = styled.li`
+  display: inline;
+  list-style-type: none;
+`
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0, display: `inline-block` }}>
-        <Link
-          to="/"
-          style={{
-            width: `200px`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-      <nav style={navStyles}>
-        <ul style={ulStyles}>
-          <li style={{ display: `inline-block`, marginLeft: `6px`}}>How it works</li>
-          <li style={{ display: `inline-block`,  marginLeft: `16px`}}>Contact</li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <SiteHeader>
+    <Inner>
+      <Heading>
+        <HomeLink to="/">{siteTitle}</HomeLink>
+      </Heading>
+      <List>
+        <ListItem> How it Works </ListItem>
+        <ListItem> Contact </ListItem>
+      </List>
+    </Inner>
+  </SiteHeader>
 )
 
 Header.propTypes = {
