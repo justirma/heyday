@@ -4,13 +4,14 @@ import React from "react"
 import styled from "styled-components"
 
 const SiteHeader = styled.header`
-  background: #fff;
-  margin: 0 4% 0 4%;
+  text-align: center;
 `
 
 const Inner = styled.div`
-  margin: 0 auto;
-  padding: 1.45rem 1.0875rem;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #f2f2f2;
+  padding: 2.3em 0;
 `
 
 const Heading = styled.h1`
@@ -25,24 +26,34 @@ const HomeLink = styled(Link)`
 
 const List = styled.ul`
   margin: 0;
-  padding: 0;
-  text-align: center;
 `
 
 const ListItem = styled.li`
   display: inline;
-  list-style-type: none;
+  padding: 0 1.4em 0 0;
+  font-size: 0.9em;
+`
+
+const Highlight = styled.p`
+  background: linear-gradient(180deg, rgba(248, 248, 129, 0) 65%, #f8f38c 65%);
+  display: inline;
 `
 
 const Header = ({ siteTitle }) => (
   <SiteHeader>
     <Inner>
       <Heading>
-        <HomeLink to="/">{siteTitle}</HomeLink>
+        <HomeLink to="/">
+          <Highlight>{siteTitle}</Highlight>
+        </HomeLink>
       </Heading>
       <List>
-        <ListItem> How it Works </ListItem>
-        <ListItem> Contact </ListItem>
+        <ListItem>
+          <a href="https://airtable.com/shrGFpxg1vULrEVGm">Sign Up</a>
+        </ListItem>
+        <ListItem>
+          <a href="mailto:hi@justirma.com">Contact us</a>
+        </ListItem>
       </List>
     </Inner>
   </SiteHeader>

@@ -11,7 +11,12 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./Header"
 import "./layout.css"
-import Hero from "./hero"
+import Hero from "./Hero"
+import FullSection from "./FullSection"
+import ThreeColumn from "./ThreeColumn"
+import FAQ from "./FAQ"
+import SecondHero from "./SecondHero"
+import Footer from "./Footer"
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -29,6 +34,11 @@ const Layout = ({ children }) => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
         <Hero />
+        <FullSection />
+        <ThreeColumn />
+        <FAQ />
+        <SecondHero />
+        <Footer />
       </>
     )}
   />

@@ -5,10 +5,11 @@ import styles from "./Button.module.css"
 let cx = classNames.bind(styles)
 
 const Button = props => {
-  const { text, dark, big } = props
+  const { text, dark, big, yellow } = props
   const buttonStyles = cx({
     button: true,
     buttonDark: dark,
+    buttonYellow: yellow,
     buttonBig: big,
   })
 
